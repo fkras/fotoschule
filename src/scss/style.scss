@@ -8,6 +8,42 @@ $green: #dcefd5;
 $transition: all 0.3s ease;
 $transitionSlow: all 1.5s ease;
 
+
+h1 {
+  line-height: 1.6;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  line-height: 1.6;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+h4 {
+  font-size: 22px;
+  line-height: 1.6;
+}
+h5{
+  font-size: 20px;
+  line-height: 1.6;
+}
+h6{
+  font-size: 16px;
+  line-height: 1.6;
+} 
+p{
+  line-height: 1.6;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
 .hasloaded {
   .banner {
     .banner-image {
@@ -197,5 +233,31 @@ header {
     &::before {
       width: 100%;
     }
+  }
+}
+.megaText{
+  position: relative;
+  min-height: 100vh;
+  background-color: $darkGreen;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+  
+  h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-20deg);
+    font-size: 11vw;
+    color: $highlight;
+    text-align: center;
   }
 }
