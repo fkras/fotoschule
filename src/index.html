@@ -70,17 +70,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="header-wrapper">
-                        <div class="header-left">
-                            <a href="#">Fotostudio</a>
-                            <a href="#">Fotoschule</a>
+                    <div class="clip-container">
+                        <div class="header-wrapper">
+                            <div class="header-left">
+                                <a href="#">Fotostudio</a>
+                                <a href="#">Fotoschule</a>
+                            </div>
+                            <a href="#" id="logo">
+                            </a>
+                            <a href="#" id="menu-button" class="button">
+                                Menu
+                            </a>
                         </div>
-                        <a href="#" id="logo">
-                            <img src="images/logo.png" />
-                        </a>
-                        <a href="#" id="menu-button" class="button">
-                            Menu
-                        </a>
                     </div>
                 </div>
             </div>
@@ -200,7 +201,7 @@
                 </div>
             </div>
         </section>
-        <section class="slider">
+        <section class="slider bg-dark" data-jq-clipthru="dark-header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -277,6 +278,54 @@
             </div>
 
         </section>
+        <section class="overview">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Aktuelle Fotokurse</h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="overview-wrapper">
+                <a href="#" class="overview-item">
+                    <img src="https://picsum.photos/id/125/550/450">
+                    <div class="overview-content">
+                        <h2>Lorem ipsum</h2>
+                        <span class="hover-up">
+                            <span class="button">
+                                <i class="fa fa-long-arrow-right"></i>
+                                Erfahre Mehr
+                            </span>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="overview-item">
+                    <img src="https://picsum.photos/id/125/550/450">
+                    <div class="overview-content">
+                        <h2>Lorem ipsum</h2>
+                        <span class="hover-up">
+                            <span class="button">
+                                <i class="fa fa-long-arrow-right"></i>
+                                Erfahre Mehr
+                            </span>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="overview-item">
+                    <img src="https://picsum.photos/id/125/550/450">
+                    <div class="overview-content">
+                        <h2>Lorem ipsum</h2>
+                        <span class="hover-up">
+                            <span class="button">
+                                <i class="fa fa-long-arrow-right"></i>
+                                Erfahre Mehr
+                            </span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </section>
 
     </main>
 
@@ -294,6 +343,8 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./vendors/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="./vendors/jq-clipthru.js"></script>
     <script type="text/javascript" src="../build/app.js"></script>
 
 </body>

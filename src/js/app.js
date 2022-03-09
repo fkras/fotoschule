@@ -8,6 +8,8 @@ $(window).on("load", () => {
   setTimeout(() => {
     $('.banner-content').addClass('active')
   }, 1500)
+$('.header-wrapper').clipthru()
+
 })
 $("#menu-button").on("click touch", () => {
   if ($("header").hasClass("menu-open")) {
@@ -18,7 +20,6 @@ $("#menu-button").on("click touch", () => {
   }
 
 })
-
 $('.slick-slider').slick({
   infinite: true,
   slidesToShow: 3,
