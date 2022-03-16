@@ -39,3 +39,4 @@ $('.accordeon-header').on('click touch',(e)=>{
     content.slideDown()
   }
 })
+new WOW().init();
