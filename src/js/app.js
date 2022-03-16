@@ -25,3 +25,17 @@ $('.slick-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1
 });
+$('.accordeon-header').on('click touch',(e)=>{
+  const parent=$(e.currentTarget).parent()
+  const content=parent.find('.accordeon-content')
+  //$('.accordeon-item').removeClass('active')
+  //$('.accordeon-content').slideUp()
+  if(parent.hasClass('active')){
+    parent.removeClass('active')
+    content.slideUp()
+  }
+  else{
+    parent.addClass('active')
+    content.slideDown()
+  }
+})

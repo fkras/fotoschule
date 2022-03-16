@@ -7,7 +7,21 @@ $darkGreen: #00371f;
 $green: #dcefd5;
 $transition: all 0.3s ease;
 $transitionSlow: all 1.5s ease;
-
+.bg-green-dark{
+  background-color: $darkGreen;
+  color: $green
+}
+.bg-green-light{
+  background-color: $green;
+  color: $darkGreen
+}
+.bg-grey {
+  background-color: $grey;
+}
+.bg-dark {
+  background-color: $darkGrey;
+  color:#fff;
+}
 h1 {
   line-height: 1.6;
   font-size: 48px;
@@ -286,12 +300,7 @@ header {
 .slider {
   padding: 80px 0;
   overflow: hidden;
-  &.bg-grey {
-    background-color: $grey;
-  }
-  &.bg-dark {
-    background-color: $darkGrey;
-  }
+  
   .container {
     position: relative;
   }
@@ -395,6 +404,73 @@ header {
           display: block;
           overflow: hidden;
           transition: $transition;
+        }
+      }
+    }
+  }
+}
+.accordeon{
+  padding: 100px 0;
+  // &.bg-dark{
+  //   .accordeon-item{
+  //     border-color: currentColor;
+  //     .accordeon-header span{
+  //       &::before,
+  //       &::after{
+  //         background-color: currentColor;
+  //       }
+  //     }
+  //   }
+  // }
+  p{
+    padding-bottom: 15px;
+  }
+  .accordeon-item{
+    border-bottom: 2px solid currentColor;
+    &.active{
+      .accordeon-header{
+        span{
+          transform: rotate(90deg);
+          &::before{
+            display: none;
+          }
+        }
+      }
+
+    }
+    .accordeon-content{
+      display: none;
+    }
+    .accordeon-header{
+      cursor: pointer;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      span{
+        width: 50px;
+        height: 50px;
+        display: block;
+        position:relative;
+        transition: $transition;
+        &::before{
+          content: "";
+          transition: $transition;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          top: 50%;
+          left: 0;
+          background-color: currentColor;
+        }
+        &::after{
+          content:"";
+          transition: $transition;
+          position: absolute;
+          height: 100%;
+          width: 2px;
+          top: 0%;
+          left: 50%;
+          background-color: currentColor;
         }
       }
     }
