@@ -23,6 +23,13 @@ $transitionSlow: all 1.5s ease;
   background-color: $darkGrey;
   color: #fff;
 }
+.bg-light-grey {
+  background-color: $lightGrey;
+  color: $darkGrey;
+  label {
+    color: $darkGreen;
+  }
+}
 h1 {
   line-height: 1.6;
   font-size: 48px;
@@ -534,10 +541,6 @@ header {
     }
   }
 }
-.py-xs-100 {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
 .input-wrapper {
   position: relative;
   margin-bottom: 40px;
@@ -596,9 +599,8 @@ header {
     opacity: 0;
     &:checked ~ label {
       &::after {
-        left: 5px;
-        width: 10px;
-        height: 10px;
+        color:#fff;
+        background-color: $darkGreen;
       }
     }
   }
@@ -621,23 +623,38 @@ header {
       border: 1px solid $darkGrey;
     }
     &::after {
-      content: "";
-      width: 0px;
-      height: 0px;
+      content: "\f00c";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 12px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 20px;
+      height: 20px;
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
-      left: 10px;
+      left: 0;
       transition: $transition;
       border-radius: 100%;
-      background-color: $darkGrey;
+      color:transparent;
+      background-color: transparent;
+    }
+    &:hover{
+      &::after{
+        color: $darkGreen
+      }
     }
   }
 }
 
-.select-wrapper{
+.other-wrapper {
   position: relative;
-  label{
+  margin-bottom: 40px;
+  label {
     position: absolute;
     top: 50%;
     left: 0px;
@@ -647,7 +664,18 @@ header {
     top: 0;
     transform: translate(0, 0) scale(0.7);
   }
-  select{
+  textarea {
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid $darkGrey;
+    background-color: transparent;
+    outline: none;
+    margin-top: 20px;
+    min-height: 50px;
+    max-height: 200px;
+  }
+  select {
     border: none;
     background-color: transparent;
     outline: none;
@@ -655,5 +683,53 @@ header {
     border-bottom: 1px solid $darkGrey;
     padding: 30px 0px 20px;
     width: 100%;
+  }
+}
+.button-wrapper{
+  p{
+    color:$red;
+    display: none;
+  }
+  &.error{
+    .button-form::after{
+      background-color: $red;
+    }
+    p{
+      display: block;
+    
+    }
+  }
+}
+.button-form {
+  width: 100%;
+  border: none;
+  padding: 20px 30px;
+  color: #fff;
+  position: relative;
+
+  &::before{
+    bottom:0;
+    background-color: #fff;
+    z-index: 2;
+  }
+  &::after {
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    transition: $transition;
+    background-color: $darkGreen;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover{
+    color:#fff;
+    &::after {
+      opacity: 0.8;
+    }
   }
 }

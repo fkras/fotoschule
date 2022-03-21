@@ -8,7 +8,7 @@ $(window).on("load", () => {
   setTimeout(() => {
     $('.banner-content').addClass('active')
   }, 1500)
-$('.header-wrapper').clipthru()
+  $('.header-wrapper').clipthru()
 
 })
 $("#menu-button").on("click touch", () => {
@@ -25,22 +25,33 @@ $('.slick-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1
 });
-$('.accordeon-header').on('click touch',(e)=>{
-  const parent=$(e.currentTarget).parent()
-  const content=parent.find('.accordeon-content')
+$('.accordeon-header').on('click touch', (e) => {
+  const parent = $(e.currentTarget).parent()
+  const content = parent.find('.accordeon-content')
   //$('.accordeon-item').removeClass('active')
   //$('.accordeon-content').slideUp()
-  if(parent.hasClass('active')){
+  if (parent.hasClass('active')) {
     parent.removeClass('active')
     content.slideUp()
   }
-  else{
+  else {
     parent.addClass('active')
     content.slideDown()
   }
 })
-$('.gallery-list .col-lg-4').each((nr,el)=>{
-  const index = nr%3 * 0.3
-  $(el).addClass('wow fadeInUp').attr('data-wow-delay',index+'s')
+$('.gallery-list .col-lg-4').each((nr, el) => {
+  const index = nr % 3 * 0.3
+  $(el).addClass('wow fadeInUp').attr('data-wow-delay', index + 's')
 })
 new WOW().init();
+
+$('.button-form').on('click touch', (e) => {
+  e.preventDefault()
+  $('form input').each((i, e) => {
+    const value = $(e).val()
+    if (value.length === 0) {
+      $('.button-wrapper').addClass('error')
+    }
+
+  })
+})
