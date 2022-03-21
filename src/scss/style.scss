@@ -7,20 +7,20 @@ $darkGreen: #00371f;
 $green: #dcefd5;
 $transition: all 0.3s ease;
 $transitionSlow: all 1.5s ease;
-.bg-green-dark{
+.bg-green-dark {
   background-color: $darkGreen;
-  color: $green
+  color: $green;
 }
-.bg-green-light{
+.bg-green-light {
   background-color: $green;
-  color: $darkGreen
+  color: $darkGreen;
 }
 .bg-grey {
   background-color: $grey;
 }
 .bg-dark {
   background-color: $darkGrey;
-  color:#fff;
+  color: #fff;
 }
 h1 {
   line-height: 1.6;
@@ -168,9 +168,8 @@ header {
   width: 100%;
   padding: 15px 0;
   z-index: 8;
-  .clip-container{
+  .clip-container {
     position: relative;
-
   }
   .header-wrapper {
     position: absolute;
@@ -178,18 +177,18 @@ header {
     top: 0;
     right: 0;
     display: flex;
-    #logo{
+    #logo {
       background-image: url(../images/logo.png);
       width: 25px;
       height: 25px;
       display: block;
       background-repeat: no-repeat;
     }
-    &.dark-header{
-      *{
+    &.dark-header {
+      * {
         color: #fff;
       }
-      #logo{
+      #logo {
         background-image: url(../images/logo_white.png);
       }
     }
@@ -300,7 +299,7 @@ header {
 .slider {
   padding: 80px 0;
   overflow: hidden;
-  
+
   .container {
     position: relative;
   }
@@ -409,7 +408,7 @@ header {
     }
   }
 }
-.accordeon{
+.accordeon {
   padding: 100px 0;
   // &.bg-dark{
   //   .accordeon-item{
@@ -422,37 +421,36 @@ header {
   //     }
   //   }
   // }
-  p{
+  p {
     padding-bottom: 15px;
   }
-  .accordeon-item{
+  .accordeon-item {
     border-bottom: 2px solid currentColor;
-    &.active{
-      .accordeon-header{
-        span{
+    &.active {
+      .accordeon-header {
+        span {
           transform: rotate(90deg);
-          &::before{
+          &::before {
             display: none;
           }
         }
       }
-
     }
-    .accordeon-content{
+    .accordeon-content {
       display: none;
     }
-    .accordeon-header{
+    .accordeon-header {
       cursor: pointer;
       display: flex;
       gap: 20px;
       align-items: center;
-      span{
+      span {
         width: 50px;
         height: 50px;
         display: block;
-        position:relative;
+        position: relative;
         transition: $transition;
-        &::before{
+        &::before {
           content: "";
           transition: $transition;
           position: absolute;
@@ -462,8 +460,8 @@ header {
           left: 0;
           background-color: currentColor;
         }
-        &::after{
-          content:"";
+        &::after {
+          content: "";
           transition: $transition;
           position: absolute;
           height: 100%;
@@ -476,64 +474,185 @@ header {
     }
   }
 }
-.gallery{
+.gallery {
   overflow: hidden;
   padding: 100px 0;
-  h2{
+  h2 {
     margin-bottom: 50px;
   }
-  img{
+  img {
     width: 100%;
     margin-bottom: 40px;
   }
 }
-.my-xs-80{
+.my-xs-80 {
   margin-top: 80px;
   margin-bottom: 80px;
 }
-.gallery-list{
-  .col-lg-4:nth-child(3n-1){
-    
+.gallery-list {
+  .col-lg-4:nth-child(3n-1) {
     position: relative;
     top: 40px;
   }
-  .col-lg-4:nth-child(6n+2){
-    
+  .col-lg-4:nth-child(6n + 2) {
     position: relative;
     top: -40px;
   }
-  .gallery-item{
+  .gallery-item {
     display: block;
     margin-bottom: 120px;
-    &:hover{
-      span{
+    &:hover {
+      span {
         top: 0;
         opacity: 1;
       }
-      .image-wrapper{
-        img{
+      .image-wrapper {
+        img {
           opacity: 0.7;
         }
       }
     }
-    .image-wrapper{
+    .image-wrapper {
       background-color: black;
       height: 550px;
       width: 100%;
       margin-bottom: 20px;
-      
-      img{
+
+      img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         transition: $transition;
       }
     }
-    span{
+    span {
       position: relative;
       top: 30px;
       opacity: 0;
       transition: $transition;
     }
+  }
+}
+.py-xs-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.input-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+  input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    transition: $transition;
+    border-bottom: 1px solid $darkGrey;
+    padding: 30px 0px 20px;
+    width: 100%;
+    &::placeholder {
+      color: transparent;
+    }
+    &:not(:placeholder-shown) + label,
+    &:focus ~ label {
+      top: 0;
+      transform: translate(0, 0) scale(0.7);
+    }
+    &:focus ~ span {
+      width: 100%;
+      left: 0;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    &:active {
+      background-color: rgba(0, 0, 0, 0.07);
+    }
+  }
+  span {
+    display: block;
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    background-color: $darkGrey;
+    position: absolute;
+    bottom: 0;
+    transition: $transition;
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    transition: $transition;
+    transform-origin: top left;
+  }
+}
+.radio-wrapper {
+  margin-bottom: 30px;
+  margin-right: 20px;
+  display: inline-block;
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked ~ label {
+      &::after {
+        left: 5px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+  label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 0;
+      border-radius: 100%;
+      border: 1px solid $darkGrey;
+    }
+    &::after {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 10px;
+      transition: $transition;
+      border-radius: 100%;
+      background-color: $darkGrey;
+    }
+  }
+}
+
+.select-wrapper{
+  position: relative;
+  label{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    transition: $transition;
+    transform-origin: top left;
+    top: 0;
+    transform: translate(0, 0) scale(0.7);
+  }
+  select{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    transition: $transition;
+    border-bottom: 1px solid $darkGrey;
+    padding: 30px 0px 20px;
+    width: 100%;
   }
 }
